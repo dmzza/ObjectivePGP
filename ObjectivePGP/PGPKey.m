@@ -448,7 +448,7 @@
         return [set[0] unsignedIntValue];
     }
     
-    return PGPSymmetricTripleDES;
+    return PGPSymmetricAES256;
 }
 
 #pragma mark - Private
