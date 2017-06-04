@@ -166,7 +166,7 @@
     BOOL result = NO;
     PGPSignatureSubpacket *subpacket = [[self subpacketsOfType:PGPSignatureSubpacketTypeKeyFlags] firstObject];
     NSArray *flags = subpacket.value;
-    if ([flags containsObject:@(PGPSignatureFlagAllowEncryptStorage)] || [flags containsObject:@(PGPSignatureFlagAllowEncryptCommunications)]) {
+    if (!flags || [flags containsObject:@(PGPSignatureFlagAllowEncryptStorage)] || [flags containsObject:@(PGPSignatureFlagAllowEncryptCommunications)]) {
         result = YES;
     }
     
